@@ -1,24 +1,37 @@
 #include "Transport.h"
 #include <iostream>
-
 using namespace std;
 
-Transport::Transport(double v, int y, string m)
+Transport::Transport(double v, int y, const char* m)
 {
-	fuel_volum = v;
+	fuel_volume = v;
 	year = y;
-	model = m;
+	model = new char[strlen(m) + 1];
+	strcpy_s(model, strlen(m) + 1, m);
 }
 
-Transport::Transport(int y, string m)
+Transport::Transport(int y, const char* m)
 {
 	year = y;
-	model = m;
+	model = new char[strlen(m) + 1];
+	strcpy_s(model, strlen(m) + 1, m);
 }
 
-void Transport::SetTransport(const double v, const string m, const int y)
+void Transport::Init()
 {
-	fuel_volum = v;
-	model = m;
-	year = y;
+	cout << "Enter year: ";
+	cin >> year;
+	system("cls");
+	cout << "Enter model: ";
+	cin >> model;
+	system("cls");
+}
+
+void Transport::Show()const {
+	cout << "Model: " << model << endl
+		<< "Year: " << year << endl;
+}
+
+Transport::~Transport() {
+	delete[] model;
 }

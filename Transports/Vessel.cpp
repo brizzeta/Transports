@@ -2,31 +2,31 @@
 #include <iostream>
 using namespace std;
 
-Vessel::Vessel(double v, int y, string m, string t) : Transport(v, y, m)
+Vessel::Vessel(double v, int y, const char* m, const char* t) : Transport(v, y, m)
 {
-	type_vessel = t;
+	type_vessel = new char[strlen(t) + 1];
+	strcpy_s(type_vessel, strlen(t) + 1, t);
 }
 
 void Vessel::Show() const
 {
-	cout << "Model: " << model << endl;
-	cout << "Year: " << year << endl;
-	cout << "Type vesse: " << type_vessel << endl;
-	cout << "Fuel volum: " << fuel_volum << endl;
+	Transport::Show();
+	cout << "Type vessel: " << type_vessel << endl
+	    << "Fuel volume: " << fuel_volume << endl;
 }
 
 void Vessel::Init()
 {
-	cout << "Enter fuel volum: ";
-	cin >> fuel_volum;
-	system("cls");
-	cout << "Enter model: ";
-	cin >> model;
-	system("cls");
-	cout << "Enter year: ";
-	cin >> year;
+	Transport::Init();
+	cout << "Enter fuel volume: ";
+	cin >> fuel_volume;
 	system("cls");
 	cout << "Enter type vessel: ";
 	cin >> type_vessel;
 	system("cls");
+}
+
+Vessel::~Vessel() {
+	Transport::~Transport();
+	delete[] type_vessel;
 }

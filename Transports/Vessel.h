@@ -2,11 +2,12 @@
 #include "Transport.h"
 class Vessel : public Transport
 {
-	string type_vessel;
+	char* type_vessel;
 public:
 	Vessel() = default;
-	Vessel(double v, int y, string m, string t);
+	Vessel(double v, int y, const char* m, const char* t);
 	void Show() const;
 	void Init();
+	~Vessel();
 };
 

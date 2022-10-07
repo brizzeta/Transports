@@ -5,15 +5,16 @@ using namespace std;
 class Transport
 {
 protected:
-	double fuel_volum;
+	double fuel_volume;
 	int year;
-	string model;
+	char* model;
 public:
 	Transport() = default;
-	Transport(double v, int y, string m);
-	Transport(int y, string m);
-	virtual void Init() = 0;
-	void SetTransport(const double v, const string m, const int y);
-	virtual void Show() const = 0;
+	Transport(double v, int y, const char* m);
+	Transport(int y, const char* m);
+	void Init();
+	void SetTransport(const char* m, const int y);
+	void Show()const;
+	virtual ~Transport() = 0;
 };
 

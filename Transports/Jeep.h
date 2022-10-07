@@ -3,10 +3,11 @@
 
 class Jeep : public Transport
 {
-	string drive_unit;
+	char* drive_unit;
 public:
 	Jeep() = default;
-	Jeep(double v, int y, string m, string u);
+	Jeep(double v, int y, const char* m, const char* u);
 	void Show() const;
 	void Init();
+	~Jeep();
 };

@@ -2,30 +2,32 @@
 #include <iostream>
 using namespace std;
 
-Bike::Bike(int y, string m, short g): Transport(y, m)
+Bike::Bike(int y, const char* m, short g, const char* f): Transport(y, m)
 {
 	gears_num = g;
+	frame_shape = new char[strlen(f) + 1];
+	strcpy_s(frame_shape, strlen(f) + 1, f);
 }
 
 void Bike::Show() const
 {
-	cout << "Model: " << model << endl;
-	cout << "Year: " << year << endl;
-	cout << "Gears number: " << gears_num << endl;
+	Transport::Show();
+	cout << "Gears number: " << gears_num << endl
+		<< "Frame shape: " << frame_shape;
 }
 
 void Bike::Init()
 {
-	cout << "Enter fuel volum: ";
-	cin >> fuel_volum;
-	system("cls");
-	cout << "Enter model: ";
-	cin >> model;
-	system("cls");
-	cout << "Enter year: ";
-	cin >> year;
-	system("cls");
+	Transport::Init();
 	cout << "Enter number of gears: ";
 	cin >> gears_num;
 	system("cls");
+	cout << "Enter frame shape: ";
+	cin >> frame_shape;
+	system("cls");
+}
+
+Bike::~Bike() {
+	Transport::~Transport();
+	delete[] frame_shape;
 }
