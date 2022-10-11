@@ -1,9 +1,2 @@
-﻿  Bike.cpp
-  Jeep.cpp
-  Plane.cpp
-  Transport.cpp
-  Truck.cpp
-  Vessel.cpp
-  main.cpp
-  Generating Code...
+﻿  main.cpp
   Transports.vcxproj -> C:\Technologies\C++\Transports\x64\Debug\Transports.exe

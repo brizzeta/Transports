@@ -1,6 +1,7 @@
 #include "Transport.h"
 #include <iostream>
 using namespace std;
+using namespace transport;
 
 Transport::Transport(double v, int y, const char* m)
 {

@@ -1,6 +1,7 @@
 #include "Bike.h"
 #include <iostream>
 using namespace std;
+using namespace bike;
 
 Bike::Bike(int y, const char* m, short g, const char* f): Transport(y, m)
 {

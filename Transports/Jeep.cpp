@@ -1,7 +1,7 @@
 #include "Jeep.h"
-#include "Transport.h"
 #include <iostream>
 using namespace std;
+using namespace jeep;
 
 Jeep::Jeep(double v, int y, const char* m, const char* u) : Transport(v, y, m)
 {
@@ -19,7 +19,7 @@ void Jeep::Show() const
 void Jeep::Init()
 {
 	Transport::Init();
-	cout << "Enter fuel volum: ";
+	cout << "Enter fuel volume: ";
 	cin >> fuel_volume;
 	system("cls");
 	cout << "Enter drive unit: ";

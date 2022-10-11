@@ -1,6 +1,7 @@
 #include "Vessel.h"
 #include <iostream>
 using namespace std;
+using namespace vessel;
 
 Vessel::Vessel(double v, int y, const char* m, const char* t) : Transport(v, y, m)
 {

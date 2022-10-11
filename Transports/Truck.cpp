@@ -1,6 +1,7 @@
 #include "Truck.h"
 #include <iostream>
 using namespace std;
+using namespace truck;
 
 Truck::Truck(double v, int y, const char* m, const char* t) : Transport(v, y, m)
 {

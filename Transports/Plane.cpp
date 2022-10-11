@@ -1,6 +1,7 @@
 #include "Plane.h"
 #include <iostream>
 using namespace std;
+using namespace plane;
 
 Plane::Plane(double v, int y, const char* m, double mas, const char* t):Transport(v, y, m)
 {
